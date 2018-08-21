@@ -49,7 +49,7 @@ var pos;
   }
     map = new google.maps.Map(document.getElementById("map"), {
       center: pos,
-      zoom: 12
+      zoom: 14
     });
   
     var request = {
@@ -138,13 +138,7 @@ var pos;
       map: map,
       icon: icon
     });
-    marker.addListener('mouseover', function() {
-      infowindow.setContent(place.name);
-      infowindow.open(map, this);
-    });
-    marker.addListener('mouseout', function() {
-    infowindow.close();
-    });
+  
     google.maps.event.addListener(marker, "mouseover", function () {
       $("#hoverTry").text(JSON.stringify(place))
     });
@@ -154,6 +148,5 @@ var pos;
     google.maps.event.addListener(marker, "click", function () {
       infowindow.setContent(place.name);
       infowindow.open(map, this);
-      console.log(this);
     });
   } // End Google Map
