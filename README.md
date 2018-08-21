@@ -1,2 +1,1 @@
-# turbo-sniffle
-project 1
+# dinner-time
